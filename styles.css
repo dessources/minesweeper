@@ -1,11 +1,12 @@
 /* ============================================================
-   MINESWEEPER STYLES
+   MINESWEEPER STYLES — STARTER VERSION
    ============================================================ */
 
 /* ------------------------------------------------------------
    STEP 1: MAKE A BOX APPEAR
    ------------------------------------------------------------ */
 
+<<<<<<< HEAD
 .game {
   background: lightblue;
   padding: 24px;
@@ -350,3 +351,261 @@ that's left to actually use it.
 body {
   font-family: "Quicksand", Arial, Helvetica, sans-serif;
 }
+=======
+.game { 
+
+}
+
+/* ------------------------------------------------------------
+   STEP 2: CENTER THAT BOX WITH FLEXBOX
+   ------------------------------------------------------------ */
+
+body {
+
+} 
+
+/* ------------------------------------------------------------
+   STEP 3: MAKE THE BOX LOOK LIKE A CARD
+   ------------------------------------------------------------ */
+
+body {
+
+}
+
+.game {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 4: TOP BAR — LAYOUT
+   This is the <header class="top-bar"> in index.html. It holds
+   the title on the left and the flag/timer/button group on the
+   right — right now they're just stacked on separate lines with
+   no styling.
+   ------------------------------------------------------------ */
+
+.top-bar {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 5: TOP BAR — THE TITLE TEXT
+   ------------------------------------------------------------ */
+
+.title {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 6: TOP BAR — THE STATS ROW
+   This wraps the flag count, timer, and new-game button so they
+   sit in a row together on the right.
+   ------------------------------------------------------------ */
+
+.stats {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 7: GIVE THE GRID ITS SIZE
+   Everything above is still cramped into a tiny top bar with
+   nothing underneath it, which makes top-bar changes hard to
+   see. This step just gives the board its real dimensions —
+   10 columns of 40px, with gaps and padding — so the whole
+   .game box grows to its real size. 
+   
+   We're not coloring the cells yet, they'll just be
+   invisible empty space for now, but the box will be big.
+   ------------------------------------------------------------ */
+
+.board {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 8: TOP BAR — EACH STAT LOOKS LIKE A PILL
+   ------------------------------------------------------------ */
+
+.stat {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 9: TOP BAR — ICON + LABEL COLORS
+   The flag stat has a <span class="icon">⚑</span>. The timer
+   stat has a <span class="icon-label">TIME</span>.
+   ------------------------------------------------------------ */
+
+.stat .icon {
+
+}
+
+.stat .icon-label {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 10: TOP BAR — THE NEW GAME BUTTON
+   ------------------------------------------------------------ */
+
+.new-btn {
+
+}
+
+.new-btn:hover {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 11: GRID — WHAT EACH SQUARE LOOKS LIKE
+   The board already has its size from Step 7. script.js already
+   filled it with 80 empty <div class="cell"> squares — now we
+   actually give them color and shape.
+   ------------------------------------------------------------ */
+
+.cell {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 12: GRID — GIVE IT ITS OWN BACKGROUND PANEL
+   ------------------------------------------------------------ */
+
+.board {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 13: HOVER FEEDBACK
+   ------------------------------------------------------------ */
+
+.cell {
+
+}
+
+.cell:not(.open):hover { 
+
+}
+
+/* ------------------------------------------------------------
+   STEP 14: WHAT AN OPENED SQUARE LOOKS LIKE
+   script.js already adds the class "open" to a square when you
+   click it — that part works with zero CSS. This step just
+   decides what .open should look like.
+   ------------------------------------------------------------ */
+
+.cell.open {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 15: NUMBER COLORS
+   Opened squares next to mines show a number 1-8 (script.js
+   sets the text and a class like "n1", "n2", etc).
+   ------------------------------------------------------------ */
+
+.n1 { color: #2563eb; }
+.n2 { color: #16a34a; }
+.n3 { color: #dc2626; }
+.n4 { color: #7c3aed; }
+.n5 { color: #ea580c; }
+.n6 { color: #0891b2; }
+.n7 { color: #374151; }
+.n8 { color: #6b7280; }
+
+/* ------------------------------------------------------------
+   STEP 16: MINES
+   ------------------------------------------------------------ */
+
+.cell.mine {
+
+}
+
+.cell.boom {
+
+}
+
+.board.over .cell {
+
+}
+
+/* ------------------------------------------------------------
+   STEP 17: THE POP-UP BOX — POSITIONING
+   This is the "click to start" / "game over" / "you win"
+   message. It needs to float centered on top of the board: the
+   board's wrapper becomes an anchor (position: relative), and
+   the pop-up positions itself relative to that anchor
+   (position: absolute).
+   ------------------------------------------------------------ */
+
+.board-wrap {
+
+}
+
+.overlay {
+
+}
+
+.overlay.hidden {
+
+}
+
+
+/* ------------------------------------------------------------
+   STEP 18: THE POP-UP BOX — TEXT SIZES
+   ------------------------------------------------------------ */
+
+.overlay-icons {
+
+}
+
+.overlay p {
+
+} 
+
+/* ------------------------------------------------------------
+   STEP 19: ANIMATIONS
+   A @keyframes rule just defines a motion, it does nothing by
+   itself until something's "animation" property points at it.
+   ------------------------------------------------------------ */
+
+@keyframes pop {
+  /* 0%   { transform: scale(0.6); }
+  70%  { transform: scale(1.1); }
+  100% { transform: scale(1); } */
+}
+
+.cell.open { 
+   /* animation: pop 0.25s ease-out; */
+}
+
+@keyframes fadeIn {
+  /* from { opacity: 0; }
+  to   { opacity: 1; } */
+}
+
+.overlay { 
+   /* animation: fadeIn 0.3s; */
+}
+
+@keyframes float {
+  /* 0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); } */
+}
+
+.overlay-icons {
+    /* animation: float 1.6s ease-in-out infinite; */
+}
+
+
+/* ------------------------------------------------------------
+   STEP 20: A CUSTOM FONT
+   The Google Font link is already in index.html's <head> (the
+   Quicksand <link> tag above the stylesheet) — this line is all
+   that's left to actually use it.
+   ------------------------------------------------------------ */
+
+body { 
+
+}
+>>>>>>> 7ebb450 (starter css)
