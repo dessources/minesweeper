@@ -1,0 +1,242 @@
+/* ============================================================
+   MINESWEEPER STYLES - FINISHED VERSION
+   Lines tagged "STEP n" are added back in that step.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   STEP 1: THE GRID
+   ------------------------------------------------------------ */
+
+   .board {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);   /* 10 columns, each 40px wide */
+    grid-auto-rows: 40px;                      /* every row is 40px tall */
+    gap: 4px;                                  /* space between squares */
+    padding: 12px;
+  }
+  
+  .cell {
+    display: flex;                  /* center whatever is inside */
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    background: #f9a8d4;
+    border-radius: 6px;
+  
+    cursor: pointer;                /* STEP 2 */
+    transition: background 0.15s, transform 0.15s;   /* STEP 2 */
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 2: HOVER + OPENED SQUARES
+     ------------------------------------------------------------ */
+  
+  /* :not(.open) = only squares that are still closed */
+  .cell:not(.open):hover {
+    background: #f472b6;
+    transform: translateY(-2px);
+  }
+  
+  .cell.open {
+    background: white;
+    border: 1px solid #fbcfe8;
+    cursor: default;
+  
+    animation: pop 0.25s ease-out;  /* STEP 7 */
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 3: NUMBERS + GAME STATES
+     ------------------------------------------------------------ */
+  
+  .n1 { color: #2563eb; }
+  .n2 { color: #16a34a; }
+  .n3 { color: #dc2626; }
+  .n4 { color: #7c3aed; }
+  .n5 { color: #ea580c; }
+  .n6 { color: #0891b2; }
+  .n7 { color: #374151; }
+  .n8 { color: #6b7280; }
+  
+  .cell.mine {
+    background: #fecdd3;
+  }
+  
+  .cell.boom {
+    background: #f43f5e;
+  }
+  
+  /* After the game ends, squares stop reacting to the mouse */
+  .board.over .cell {
+    pointer-events: none;
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 4: THE TOP BAR (FLEXBOX)
+     ------------------------------------------------------------ */
+  
+  .top-bar {
+    display: flex;
+    justify-content: space-between;   /* title left, stats right */
+    align-items: center;              /* line them up vertically */
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    margin: 0;
+    font-size: 24px;
+    color: #3b1d2f;
+  }
+  
+  .stats {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #3b1d2f;
+    background: #fdf2f8;
+    border-radius: 8px;
+  }
+
+  .stat .icon {
+    color: #db2777;
+    font-size: 18px;
+  }
+
+  .stat .icon-label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: #be185d;
+  }
+  
+  .new-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #be185d;
+    background: white;
+    border: 1px solid #f9a8d4;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .new-btn:hover {
+    background: #fdf2f8;
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 5: THE PAGE + CARD
+     ------------------------------------------------------------ */
+  
+  * {
+    box-sizing: border-box;    /* padding and border stay inside the width */
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;   /* center left-to-right */
+    align-items: center;       /* center top-to-bottom */
+    background: #fce7f3;
+    font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+    user-select: none;
+  }
+  
+  .game {
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Added to the .board rule from Step 1: */
+  .board {
+    background: #fdf2f8;
+    border-radius: 12px;
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 6: THE POP-UP BOX
+     ------------------------------------------------------------ */
+  
+  .board-wrap {
+    position: relative;        /* the box is positioned inside this */
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);   /* pull it back by half its own size */
+    min-width: 220px;
+    padding: 24px 32px;
+    color: white;
+    text-align: center;
+    background: rgba(59, 29, 47, 0.9);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  
+    animation: fadeIn 0.3s;    /* STEP 7 */
+  }
+  
+  .overlay.hidden {
+    display: none;
+  }
+  
+  .overlay-icons {
+    font-size: 48px;
+  
+    animation: float 1.6s ease-in-out infinite;   /* STEP 7 */
+  }
+  
+  .overlay p {
+    margin: 12px 0 0;
+    font-size: 16px;
+  }
+  
+  
+  /* ------------------------------------------------------------
+     STEP 7: ANIMATIONS
+     ------------------------------------------------------------ */
+  
+  @keyframes pop {
+    0%   { transform: scale(0.6); }
+    70%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  
+  
+  /* ------------------------------------------------------------
+     BONUS CHALLENGES
+     1. Change the pink to blue or green everywhere
+     2. Make the board shake when you lose (@keyframes + .board.over)
+     3. Change the grid to 12 columns (you'd also need to edit
+        the JS numbers at the top of script.js)
+     ------------------------------------------------------------ */

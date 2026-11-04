@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="game">
+
+    <header class="top-bar">
+      <h1 class="title">Minesweeper</h1>
+
+      <div class="stats">
+        <div class="stat"><span class="icon">⚑</span> <span id="flags">10</span></div>
+        <div class="stat"><span class="icon-label">TIME</span> <span id="timer">000</span></div>
+        <button id="new-btn" class="new-btn" title="New game">↻</button>
+      </div>
+    </header>
+
+    <div class="board-wrap">
+      <div id="board" class="board"></div>
+
+      <div id="overlay" class="overlay">
+        <div id="overlay-icons" class="overlay-icons">▶</div>
+        <p id="overlay-text"></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
