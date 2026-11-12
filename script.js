@@ -14,7 +14,6 @@
    Follow the steps below in order.
    ============================================================ */
 
-
 /* ------------------------------------------------------------
    STEP 1: VARIABLES & CONSTANTS (SETTINGS)
    "const" defines a name for a value that NEVER changes while the
@@ -30,7 +29,6 @@
 const rows = 8;
 const cols = 10;
 const mines = 10;
-
 
 /* ------------------------------------------------------------
    STEP 2: DATA TYPES & GAME STATE VARIABLES
@@ -58,7 +56,6 @@ let opened;
 let seconds;
 let timerId;
 
-
 /* ------------------------------------------------------------
    STEP 3: GRAB ELEMENTS FROM THE HTML (THE DOM)
    The Document Object Model (DOM) is the bridge between HTML and JS.
@@ -82,7 +79,6 @@ const newBtn = document.getElementById("new-btn");
 const overlayEl = document.getElementById("overlay");
 const overlayIcons = document.getElementById("overlay-icons");
 const overlayText = document.getElementById("overlay-text");
-
 
 /* ------------------------------------------------------------
    STEP 4: FUNCTIONS & BASIC UI UPDATES
@@ -123,7 +119,6 @@ function hideOverlay() {
   // TODO: Add "hidden" to overlayEl.classList
 }
 
-
 /* ------------------------------------------------------------
    STEP 5: OBJECTS (MODELING A SINGLE CELL)
    An object bundles related properties together using { key: value }.
@@ -140,17 +135,8 @@ function hideOverlay() {
 
 function createCell(r, c) {
   // TODO: Return a cell object with r, c, mine, open, flag, count, and el
-  return {
-    r: r,
-    c: c,
-    mine: false,
-    open: false,
-    flag: false,
-    count: 0,
-    el: null
-  };
+  return {};
 }
-
 
 /* ------------------------------------------------------------
    STEP 6: LOOPS & 2D ARRAYS (BUILDING THE GRID MATRIX)
@@ -173,7 +159,6 @@ function createEmptyGrid() {
   return matrix;
 }
 
-
 /* ------------------------------------------------------------
    STEP 7: COORDINATE MATH & NESTED LOOPS (FINDING NEIGHBORS)
    Every square on the board has up to 8 neighbors touching it.
@@ -195,7 +180,6 @@ function neighbors(cell) {
   // TODO: Nested loops for dr and dc from -1 to 1, check bounds, push to list
   return list;
 }
-
 
 /* ------------------------------------------------------------
    STEP 8: DOM CREATION & RENDERING (THE BOARD APPEARS!)
@@ -228,7 +212,6 @@ function renderBoard() {
   // TODO: Clear boardEl, iterate over grid, create elements, and append to boardEl
 }
 
-
 /* ------------------------------------------------------------
    STEP 9: HIGHER-ORDER FUNCTIONS: TIMERS (setInterval)
    A higher-order function is a function that takes another function
@@ -253,7 +236,6 @@ function stopTimer() {
   // TODO: Clear the timer interval
 }
 
-
 /* ------------------------------------------------------------
    STEP 10: WHILE LOOPS & RANDOMNESS (SAFE MINE PLACEMENT)
    Math.random() gives a random decimal from 0 to 0.999...
@@ -273,7 +255,6 @@ function placeMines(safeR, safeC) {
   // TODO: While loop placing random mines safely, then count adjacent mines
 }
 
-
 /* ------------------------------------------------------------
    STEP 11: HIGHER-ORDER FUNCTIONS: ARRAY METHODS (.filter)
    .filter() runs a test function on each item in an array and keeps
@@ -288,7 +269,6 @@ function placeMines(safeR, safeC) {
 function countAdjacentMines() {
   // TODO: Loop through grid and use .filter() on neighbors to calculate cell.count
 }
-
 
 /* ------------------------------------------------------------
    STEP 12: CONDITIONALS & EVENT HANDLERS (FLAGGING & OPENING)
@@ -326,7 +306,6 @@ function openCell(r, c) {
   // TODO: Guard clauses, first-click initialization, mine check, reveal, win check
 }
 
-
 /* ------------------------------------------------------------
    STEP 13: RECURSION & HIGHER-ORDER FUNCTIONS (.forEach)
    Recursion is when a function calls ITSELF.
@@ -348,7 +327,6 @@ function openCell(r, c) {
 function reveal(cell) {
   // TODO: Base case, mark open, add classes, show count or forEach(reveal)
 }
-
 
 /* ------------------------------------------------------------
    STEP 14: WIN & LOSS CONDITIONS (GAME OVER & TEMPLATES)
@@ -382,7 +360,6 @@ function lose(hitCell) {
 function win() {
   // TODO: Call endGame, show victory overlay with seconds elapsed
 }
-
 
 /* ------------------------------------------------------------
    STEP 15: PUTTING IT ALL TOGETHER (ORCHESTRATING NEW GAME)
